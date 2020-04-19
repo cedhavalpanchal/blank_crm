@@ -120,7 +120,7 @@ class User_management_control extends CI_Controller
 
         if (!empty($searchtext)) {
             $searchkeyword = mysqli_real_escape_string($this->db->conn_id, (trim(stripslashes($searchtext))));
-            $where         = '(CONCAT_WS(" ",first_name,last_name) LIKE "%' . $searchkeyword . '%" OR email LIKE "%' . $searchkeyword . '%" OR first_name LIKE "%' . $searchkeyword . '%" OR last_name LIKE "%' . $searchkeyword . '%")';
+            $where         = '(CONCAT_WS(" ",first_name,last_name) LIKE "%' . $searchkeyword . '%" OR email LIKE "%' . $searchkeyword . '%" OR first_name LIKE "%' . $searchkeyword . '%" OR last_name LIKE "%' . $searchkeyword . '%") OR mobile LIKE "%' . $searchkeyword . '%" ';
         }
 
         //Get All Users

@@ -98,36 +98,19 @@ if ($flag == 1) {
     $route['admin/' . $conntrol]                 = "admin/" . $conntrol . "/" . $conntrol . "_control";
     $route['admin/' . $conntrol . '/add_record'] = 'admin/' . $conntrol . '/' . $conntrol . '_control/add_record';
 
-    $route['admin/' . $conntrol . '/check_email']             = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_email';
-    $route['admin/' . $conntrol . '/check_source_name']       = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_source_name';
-    $route['admin/' . $conntrol . '/check_slug']              = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_slug';
-    $route['admin/' . $conntrol . '/check_username']          = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_username';
-    $route['admin/' . $conntrol . '/insert_data']             = 'admin/' . $conntrol . '/' . $conntrol . '_control/insert_data';
-    $route['admin/' . $conntrol . '/insert_comment']          = 'admin/' . $conntrol . '/' . $conntrol . '_control/insert_comment';
-    $route['admin/' . $conntrol . '/insert_followup_comment'] = 'admin/' . $conntrol . '/' . $conntrol . '_control/insert_followup_comment';
-    $route['admin/' . $conntrol . '/edit_record/(:num)']      = 'admin/' . $conntrol . '/' . $conntrol . '_control/edit_record';
-    $route['admin/' . $conntrol . '/checkout_success/(:num)'] = 'admin/' . $conntrol . '/' . $conntrol . '_control/checkout_success';
-
-    $route['admin/' . $conntrol . '/deep_link/(:num)'] = 'admin/' . $conntrol . '/' . $conntrol . '_control/deep_link';
-
-    $route['admin/' . $conntrol . '/view_record/(:num)']        = 'admin/' . $conntrol . '/' . $conntrol . '_control/view_record';
-    $route['admin/' . $conntrol . '/view_record/(:num)/(:num)'] = 'admin/' . $conntrol . '/' . $conntrol . '_control/view_record';
-    $route['admin/' . $conntrol . '/status_update/(:num)']      = 'admin/' . $conntrol . '/' . $conntrol . '_control/status_update';
-    $route['admin/' . $conntrol . '/renew_plan/(:num)']         = 'admin/' . $conntrol . '/' . $conntrol . '_control/renew_plan';
-    $route['admin/' . $conntrol . '/send_mail/(:num)']          = 'admin/' . $conntrol . '/' . $conntrol . '_control/send_mail';
-    $route['admin/' . $conntrol . '/update_data']               = 'admin/' . $conntrol . '/' . $conntrol . '_control/update_data';
-    $route['admin/' . $conntrol . '/ajax_delete_all']           = 'admin/' . $conntrol . '/' . $conntrol . '_control/ajax_delete_all';
-    $route['admin/' . $conntrol . '/delete_record']             = 'admin/' . $conntrol . '/' . $conntrol . '_control/delete_record';
-    $route['admin/' . $conntrol . '/ajax_status_all']           = 'admin/' . $conntrol . '/' . $conntrol . '_control/ajax_status_all';
-    $route['admin/' . $conntrol . '/dummy_records']             = 'admin/' . $conntrol . '/' . ucfirst($conntrol) . '_control/dummy_records';
-    $route['admin/' . $conntrol . '/check_category']            = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_category';
-    $route['admin/' . $conntrol . '/get_cat_size_detail']       = 'admin/' . $conntrol . '/' . $conntrol . '_control/get_cat_size_detail';
-    $route['admin/' . $conntrol . '/check_condition']           = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_condition';
-    $route['admin/' . $conntrol . '/delete_product_image']      = 'admin/' . $conntrol . '/' . $conntrol . '_control/delete_product_image';
-    $route['admin/' . $conntrol . '/get_size_list']             = 'admin/' . $conntrol . '/' . $conntrol . '_control/get_size_list';
-    $route['admin/' . $conntrol . '/check_plan_detail']         = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_plan_detail';
-    $route['admin/' . $conntrol . '/excel_export']              = 'admin/' . $conntrol . '/' . $conntrol . '_control/excel_export';
-    $route['admin/' . $conntrol . '/admin_change_password']     = 'admin/' . $conntrol . '/' . ucfirst($conntrol) . '_control/admin_change_password';
+    $route['admin/' . $conntrol . '/check_email']           = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_email';
+    $route['admin/' . $conntrol . '/check_username']        = 'admin/' . $conntrol . '/' . $conntrol . '_control/check_username';
+    $route['admin/' . $conntrol . '/insert_data']           = 'admin/' . $conntrol . '/' . $conntrol . '_control/insert_data';
+    $route['admin/' . $conntrol . '/insert_comment']        = 'admin/' . $conntrol . '/' . $conntrol . '_control/insert_comment';
+    $route['admin/' . $conntrol . '/edit_record/(:num)']    = 'admin/' . $conntrol . '/' . $conntrol . '_control/edit_record';
+    $route['admin/' . $conntrol . '/view_record/(:num)']    = 'admin/' . $conntrol . '/' . $conntrol . '_control/view_record';
+    $route['admin/' . $conntrol . '/status_update/(:num)']  = 'admin/' . $conntrol . '/' . $conntrol . '_control/status_update';
+    $route['admin/' . $conntrol . '/send_mail/(:num)']      = 'admin/' . $conntrol . '/' . $conntrol . '_control/send_mail';
+    $route['admin/' . $conntrol . '/update_data']           = 'admin/' . $conntrol . '/' . $conntrol . '_control/update_data';
+    $route['admin/' . $conntrol . '/ajax_delete_all']       = 'admin/' . $conntrol . '/' . $conntrol . '_control/ajax_delete_all';
+    $route['admin/' . $conntrol . '/delete_record']         = 'admin/' . $conntrol . '/' . $conntrol . '_control/delete_record';
+    $route['admin/' . $conntrol . '/ajax_status_all']       = 'admin/' . $conntrol . '/' . $conntrol . '_control/ajax_status_all';
+    $route['admin/' . $conntrol . '/admin_change_password'] = 'admin/' . $conntrol . '/' . ucfirst($conntrol) . '_control/admin_change_password';
 
     $route['admin/' . $conntrol . '/select_form']      = 'admin/' . $conntrol . '/' . $conntrol . '_control/select_form';
     $route['admin/' . $conntrol . '/view_form/(:num)'] = 'admin/' . $conntrol . '/' . $conntrol . '_control/view_form';
@@ -135,52 +118,19 @@ if ($flag == 1) {
     $route['admin/' . $conntrol . '/(:num)']     = 'admin/' . $conntrol . '/' . $conntrol . '_control';
     $route['admin/' . $conntrol . '/msg/(:any)'] = 'admin/' . $conntrol . '/' . $conntrol . '_control';
     $route['admin/' . $conntrol . '/(:any)']     = "admin/" . $conntrol . "/" . $conntrol . "_control";
-
-    $route['admin/' . $conntrol . '/product_detail/(:num)'] = 'admin/' . $conntrol . '/' . $conntrol . '_control/product_detail';
 } elseif ($flag == 2) {
     $route['ws/employee_login']  = "ws/Employee_control/employee_login";
     $route['ws/forget_password'] = "ws/Employee_control/forget_password";
     $route['ws/change_password'] = "ws/Employee_control/change_password";
     $route['ws/user_verify']     = "ws/Employee_control/user_verify";
     $route['ws/history_sync']    = "ws/History_control/history_sync";
-
-    $route['ws/logout/id/(:num)'] = "ws/Others_control/logout/id/$1";
-    $route['ws/location_details'] = "ws/Others_control/location_details";
-    $route['ws/apiVersionNew']    = "ws/Others_control/apiVersionNew";
 } elseif ($flag == 3) {
     //$route['index']   = "front/index/home";
     $route[$conntrol]                = "front/" . $conntrol . "/" . $conntrol . "_control";
     $route[$conntrol . '/list_data'] = "front/" . $conntrol . "/" . $conntrol . "_control/list_data";
 }
-
-// End
-
-/*------------ END  Reset Password  URL------------------*/
-
-/*----------- Reset Password Mobile URL ----------- */
-
-$route['reset_password_mobile']                                = 'reset_password/reset_password_mobile_control';
-$route['reset_password_mobile/change_password']                = 'reset_password/reset_password_mobile_control/change_password';
-$route['reset_password_mobile/reset_password_template/(:any)'] = 'reset_password/reset_password_mobile_control/reset_password_template/';
-
-/*------------ END  Reset Password Mobile URL------------------*/
-
-$route['verify_management/verify_user'] = 'verify_management/Verify_management_control/verify_user';
-
 //For Admin Redirection
-$route['admin']                     = "admin/login/login";
-$route['admin/login']               = "admin/login/login";
-$route['admin/logout']              = "admin/login/logout";
-$route['admin/dashboard']           = "admin/index/dashboard";
-$route['admin/dashboard_lead_list'] = "admin/index/dashboard/dashboard_lead_list";
-
-/*----------- Reset Password URL ----------- */
-
-$route['reset_password']                                        = 'reset_password/reset_password_control';
-$route['reset_password/change_password']                        = 'reset_password/reset_password_control/change_password';
-$route['reset_password/reset_password_front']                   = 'reset_password/reset_password_control/reset_password_front';
-$route['reset_password/reset_password_template/(:any)']         = 'reset_password/reset_password_control/reset_password_template/';
-$route['reset_password/reset_password_template_front/(:any)']   = 'reset_password/reset_password_control/reset_password_template_front/';
-$route['reset_password/reset_password_template_company/(:any)'] = 'reset_password/reset_password_control/reset_password_template_company/';
-$route['reset_password/change_password_company']                = 'reset_password/reset_password_control/change_password_company';
-
+$route['admin']           = "admin/login/login";
+$route['admin/login']     = "admin/login/login";
+$route['admin/logout']    = "admin/login/logout";
+$route['admin/dashboard'] = "admin/index/dashboard";
