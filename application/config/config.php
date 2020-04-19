@@ -528,6 +528,7 @@ $config['proxy_ips'] = '';
 /*-------------Define a custom path ---------------------*/
 $config['css_path']          = $config['base_url'] . "css/";
 $config['js_path']           = $config['base_url'] . "js/";
+$config['asset_path']           = $config['base_url'] . "asset/";
 $config['image_path']        = $config['base_url'] . "images/";
 $config['upload_img_path']   = $config['base_url'] . "uploads/";
 $config['admin_base_url']    = $config['base_url'] . $config['index_page'] . 'admin/';
@@ -538,14 +539,7 @@ $config['front_base_url'] = $config['base_url'] . $config['index_page'] . 'front
 $config['base_path'] = $_SERVER['DOCUMENT_ROOT'];
 $config['base_path'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])) . '';
 
-$config['sample_excel_path'] = $config['base_url'] . "asset/sample_document/";
-
 $config['admin_pic_big_path']   = $config['base_path'] . "/uploads/admin_images/big/";
 $config['admin_pic_thumb_path'] = $config['base_path'] . "/uploads/admin_images/thumb/";
 $config['admin_pic_big_url']    = $config['base_url'] . "uploads/admin_images/big/";
 $config['admin_pic_thumb_url']  = $config['base_url'] . "uploads/admin_images/thumb/";
-
-$config['lead_pic_big_path']   = $config['base_path'] . "/uploads/lead_images/big/";
-$config['lead_pic_thumb_path'] = $config['base_path'] . "/uploads/lead_images/thumb/";
-$config['lead_pic_big_url']    = $config['base_url'] . "uploads/lead_images/big/";
-$config['lead_pic_thumb_url']  = $config['base_url'] . "uploads/lead_images/thumb/";

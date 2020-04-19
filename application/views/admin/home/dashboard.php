@@ -5,23 +5,64 @@
             <h1 class="orange-clr">Welcome to Business CRM admin panel</h1>
         </div>
 
-        <!--TAB:START--> 
-        <div class="card-block">
-            <ul class="nav nav-tabs">
-                <li><a class="active show" href="#1a" data-toggle="tab">Today's tasks</a></li>
-                <li><a href="#2a" data-toggle="tab">Over due tasks</a></li>
-            </ul>
-        </div>
-
-        <div class="cards-container">
-            <div class="tab-content clearfix">
-
-                <!--TAB-1 Contant Start-->
-                <div class="tab-pane active">
-
-                </div>
-            </div>
-        </div>
+       <div class="row widget-row">
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Current Balance</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-green icon-bulb"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="7,644">7,644</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET THUMB -->
+                        </div>
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Weekly Sales</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-red icon-layers"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="1,293">1,293</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET THUMB -->
+                        </div>
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Biggest Purchase</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-purple icon-screen-desktop"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="815">815</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET THUMB -->
+                        </div>
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Average Monthly</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-blue icon-bar-chart"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="5,071">5,071</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET THUMB -->
+                        </div>
+                    </div>
        <!--TAB:CLOSE-->
     </div>
 </div>

@@ -37,6 +37,7 @@ if(!empty($user_image)){
         <link rel="apple-touch-icon" href="icon.png">
 
         <!-- css file -->
+         
         <link rel="stylesheet" href="<?php echo $this->config->item('css_path') ?>bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo $this->config->item('css_path') ?>fonts.css">
         <link rel="stylesheet" href="<?php echo $this->config->item('css_path') ?>dcalendar.picker.css">
@@ -44,14 +45,16 @@ if(!empty($user_image)){
         <link rel="stylesheet" href="<?php echo $this->config->item('css_path') ?>main.css">
         <link rel="stylesheet" href="<?php echo $this->config->item('css_path') ?>responsive.css">
 
-        <!-- Js file -->
-        <script src="<?php echo $this->config->item('js_path') ?>jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="<?= $this->config->item('js_path') ?>common.js"></script>
-        <script type="text/javascript" src="<?= $this->config->item('js_path') ?>jquery.blockUI.js"></script>
-        <script type="text/javascript" src="<?= $this->config->item('js_path') ?>jquery.confirm.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <link href="<?php echo $this->config->item('asset_path') ?>themes/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo $this->config->item('asset_path') ?>themes/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
 
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="<?php echo $this->config->item('asset_path') ?>themes/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="<?php echo $this->config->item('asset_path') ?>themes/css/plugins.min.css" rel="stylesheet" type="text/css" />
 
+        <link href="<?php echo $this->config->item('asset_path') ?>themes/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="<?php echo $this->config->item('asset_path') ?>themes/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             
             var Logout_url = '<?= $this->config->item('admin_base_url').'logout'; ?>';
