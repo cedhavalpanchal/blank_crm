@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <body>
             <div id="wrapper">
                 <h1 id="site-logo">
-                    <a href="<?= base_url('admin'); ?>"> <img width="200px;" alt="<?php echo $this->config->item('project_name') ?>" src="<?php echo $this->config->item('base_url') ?>images/tops-infosolutions.svg"></a>
+                    <a href="<?= base_url('admin'); ?>"> <img width="200px;" alt="<?php echo $this->config->item('project_name') ?>" src="<?php echo $this->config->item('base_url') ?>images/logo.png"></a>
                     
                 </h1>
                 <div class="container">

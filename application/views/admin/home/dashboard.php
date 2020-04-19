@@ -2,7 +2,7 @@
 <div class="main-container">
     <div class="page-container">
         <div class="titlebar">
-            <h1 class="orange-clr">Welcome to Business CRM admin panel</h1>
+            <h1 class="orange-clr">Welcome to <?= $this->config->item('sitename'); ?></h1>
         </div>
 
        <div class="row widget-row">
