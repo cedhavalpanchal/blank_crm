@@ -4,10 +4,7 @@
   @Author: Dhaval Panchal
   @Date: 19-07-18
 */ 
-
-$admin_type = $this->router->uri->segments[1];
 $viewname = $this->router->uri->segments[2];
-$session_data = $this->session->userdata('change_password_session');
 ?>
 
 
@@ -20,33 +17,14 @@ $session_data = $this->session->userdata('change_password_session');
         <!-- add new user start -->
 
         <div class="card-block form-container">
-            <div>
-                <?php if (null !== ($this->session->userdata('change_password_session')) && false !== $this->session->userdata('change_password_session')){ ?>
-                    <div class="text-center" id="div_msg">
-                        <?php
-                        $class = "";
-                        $flash = $this->session->userdata('change_password_session');
-                        if ($flash['status'] === 'failed') {
-                            $class = "alert alert-danger";
-                        } else {
-                            $class = "alert alert-success";
-                        }
-                        ?>
-                        <div class="<?= $class ?>">
-                            <a href="javascript:void(0)" class="close close-message" aria-label="close" title="Close">&times;</a>
-                        <?php echo $flash['message']; ?>
-                        </div>
-                        
-                    </div>
-                    <?php $this->session->unset_userdata('change_password_session'); }   ?>
-            </div>
+            <?php $this->load->view('admin/include/alert_message');  ?>
             <form class="form parsley-form" enctype="multipart/form-data" name="<?php echo $viewname; ?>" id="<?php echo $viewname; ?>" method="post" accept-charset="utf-8" action="<?= $this->config->item('admin_base_url') ?>change_password/admin_change_password" > 
 
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
                         <div class="form-group custom-group">
                             <label for="select-multi-input"><?php echo $this->lang->line('old_password');?><span style="color:#F00">*</span></label>
-                            <input data-minlength="6" type="password" name="oldpassword" id="oldpassword" class="form-control " type="text" data-required="true"  placeholder="<?php echo $this->lang->line('old_password');?>"/>
+                            <input data-minlength="6" type="password" name="oldpassword" id="oldpassword" class="form-control " type="text"  placeholder="<?php echo $this->lang->line('old_password');?>"/>
                         </div>
                     </div>
                 <!-- </div>
@@ -80,42 +58,3 @@ $session_data = $this->session->userdata('change_password_session');
         </div>
     </div>
 </div>
-<!-- #content --> 
-<script>
-    
-    $('#<?= $viewname ?>').validate({
-          onkeyup:true,
-          rules: {
-                oldpassword: {
-                    required: true,
-                },
-                password: {
-                    required: true,
-                    normalizer: function (value) {
-                        return $.trim(value);
-                    },
-                    minlength:6,
-                },
-                cpassword:{
-                    required: true,
-                    normalizer: function (value) {
-                        return $.trim(value);
-                    },
-                    equalTo: "#password",
-                }
-            },
-            messages: {
-                oldpassword: {
-                    required: 'Old Password cannot be blank',
-                },
-                password: {
-                    required: 'Password cannot be blank',
-                    minlength: "Password must be at least 6 characters long ",
-                },
-                cpassword: {
-                    required: 'Confirm Password cannot be blank',
-                    equalTo: "Password and Confirm Password should be same.",
-                },
-            }
-      });
-</script>

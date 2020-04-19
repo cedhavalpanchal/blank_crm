@@ -7,7 +7,7 @@
 ?>
 <?php 
 $viewname       = $this->router->uri->segments[2];
-$formAction     = !empty($editRecord)?'update_data':'update_data'; 
+$formAction     = 'update_data';
 $path           = $viewname.'/'.$formAction;
 ?>
 
@@ -18,25 +18,7 @@ $path           = $viewname.'/'.$formAction;
             <a class="btn btn-primary pull-right" href="<?= base_url('admin/dashboard');?>" title="Back">Back</a>  
         </div>
         <div class="card-block form-container">
-            <div class="text-center" id="div_msg">
-                <?php
-                    if (null !== ($this->session->flashdata('message_session')) && false !== $this->session->flashdata('message_session')) {
-                        $flash = $this->session->flashdata('message_session');
-                        if ($flash['status'] === 'failed') {
-                            ?>
-                            <div class="alert alert-danger">
-                                <a href="javascript:void(0)" class="close close-message" aria-label="close" title="Close">&times;</a>
-                            <?php echo $flash['message']; ?>
-                            </div>
-                        <?php } else { ?>
-                            <div class="alert alert-success">
-                                <a href="javascript:void(0)" class="close close-message" aria-label="close" title="Close">&times;</a>  <?php echo $flash['message']; ?>
-                            </div>
-                        <?php
-                    }
-                }
-                ?>
-            </div>
+            <?php $this->load->view('admin/include/alert_message');  ?>
             <form class="form" enctype="multipart/form-data" name="<?php echo $viewname;?>" id="<?php echo $viewname;?>" method="post" accept-charset="utf-8" action="<?= $this->config->item('admin_base_url')?><?php echo $path?>">
                 <div style="border:2px solid grey;padding:18px;">
                 <div class="row">
@@ -140,89 +122,3 @@ $path           = $viewname.'/'.$formAction;
         </div>
     </div>
 </div>
-
-<!-- #content --> 
-<script type="text/javascript">
-
-    $('#<?= $viewname ?>').validate({
-          onkeyup:false,
-          rules: {
-              sitename: {
-                  required: true
-              },
-              admin_email: {
-                  required: true
-              },
-              address1: {
-                required: true
-              },
-              contact_number : {
-                  required: true,
-                  minlength : 10,
-                  maxlength : 10,
-              },
-              contact_email: {
-                  required: true
-              },
-              smtp_host: {
-                  required: true
-              },
-              smtp_user: {
-                  required: true
-              },
-              smtp_pass: {
-                  required: true
-              },
-              protocol: {
-                  required: true
-              },
-              smtp_port: {
-                  required: true
-              },
-              smtp_timeout: {
-                  required: true
-              },
-          },
-          messages: {
-              first_name: {
-                  required: 'First Name cannot be blank',
-              },
-              sitename: {
-                  required: 'Sitename cannot be blank',
-              },
-              admin_email: {
-                  required: 'Admin Email cannot be blank',
-              },
-              address1: {
-                  required: 'Address cannot be blank',
-              },
-              contact_number : {
-                  required: 'Contact Number cannot be blank',
-                  minlength : 10,
-                  maxlength : 10,
-              },
-              contact_email: {
-                  required: 'Contact Email cannot be blank',
-              },
-              smtp_host: {
-                  required: 'SMTP Host cannot be blank',
-              },
-              smtp_user: {
-                  required: 'SMPT User cannot be blank',
-              },
-              smtp_pass: {
-                  required: 'SMTP Password cannot be blank',
-              },
-              protocol: {
-                  required: 'Protocol cannot be blank',
-              },
-              smtp_port: {
-                  required: 'SMTP Port cannot be blank',
-              },
-              smtp_timeout: {
-                  required: 'SMPT Timout cannot be blank',
-              },
-          }
-      });
-
-</script>

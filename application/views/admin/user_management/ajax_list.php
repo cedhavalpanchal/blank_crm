@@ -145,6 +145,7 @@ if (isset($sortby) && $sortby == 'asc') {
         <input type="hidden" id="sortfield" name="sortfield" value="<?php if (isset($sortfield)) echo $sortfield; ?>" />
         <input type="hidden" id="sortby" name="sortby" value="<?php if (isset($sortby)) echo $sortby; ?>" /></td>
         <input type="hidden" id="uri_segment" name="uri_segment" value="<?php if (isset($uri_segment)) echo $uri_segment; ?>" /></td>
+        
     </div>
 
     <!--PAGINATION:START-->

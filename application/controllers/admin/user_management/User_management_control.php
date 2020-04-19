@@ -159,6 +159,7 @@ class User_management_control extends CI_Controller
             $this->load->view($this->user_type . '/' . $this->viewname . '/ajax_list', $data);
         } else {
             $data['main_content'] = $this->user_type . '/' . $this->viewname . "/list";
+            $data['foot_part_js'] = 'admin_list';
             $this->load->view('admin/include/template', $data);
         }
     }
@@ -175,6 +176,7 @@ class User_management_control extends CI_Controller
     {
 
         $data['main_content'] = "admin/" . $this->viewname . "/add";
+        $data['foot_part_js'] = 'admin_add';
         $this->load->view('admin/include/template', $data);
     }
 
@@ -265,14 +267,14 @@ class User_management_control extends CI_Controller
                         "status"  => $this->lang->line('message_type_success'),
                         "message" => $this->lang->line('common_add_success_msg'),
                     );
-                    $this->session->set_flashdata('response', $response);
+                    $this->session->set_flashdata('message_session', $response);
                     redirect($this->user_type . '/' . $this->viewname);
                 } else {
                     $response = array(
                         "status"  => $this->lang->line('message_type_failed'),
                         "message" => $this->lang->line('common_error_msg'),
                     );
-                    $this->session->set_flashdata('response', $response);
+                    $this->session->set_flashdata('message_session', $response);
                     redirect($this->user_type . '/' . $this->viewname);
                 }
             }
@@ -281,7 +283,7 @@ class User_management_control extends CI_Controller
                 "status"  => $this->lang->line('message_type_failed'),
                 "message" => $this->lang->line('common_error_msg'),
             );
-            $this->session->set_flashdata('response', $response);
+            $this->session->set_flashdata('message_session', $response);
             redirect($this->user_type . '/' . $this->viewname);
         }
     }
@@ -300,7 +302,7 @@ class User_management_control extends CI_Controller
         /*$data['smenu_title'] = $this->lang->line('admin_left_menu15');
         $data['submodule'] = $this->lang->line('admin_left_ssclient');*/
 
-        $field       = array('id','first_name', 'last_name', 'mobile', 'email', 'profile_pic');
+        $field       = array('id', 'first_name', 'last_name', 'mobile', 'email', 'profile_pic');
         $match       = array('id' => $id);
         $sq_data_all = array
             (
@@ -315,6 +317,7 @@ class User_management_control extends CI_Controller
         }
 
         $data['editRecord']   = $result;
+        $data['foot_part_js'] = 'admin_add';
         $data['main_content'] = $this->user_type . '/' . $this->viewname . "/add";
         $this->load->view($this->user_type . '/include/template', $data);
     }
@@ -347,7 +350,7 @@ class User_management_control extends CI_Controller
                 "status"  => $this->lang->line('message_type_failed'),
                 "message" => $this->lang->line('common_error_msg'),
             );
-            $this->session->set_flashdata('response', $response);
+            $this->session->set_flashdata('message_session', $response);
             redirect($this->user_type . '/' . $this->viewname);
         }
 
@@ -420,7 +423,7 @@ class User_management_control extends CI_Controller
                     "status"  => $this->lang->line('message_type_success'),
                     "message" => $this->lang->line('common_edit_success_msg'),
                 );
-                $this->session->set_flashdata('response', $response);
+                $this->session->set_flashdata('message_session', $response);
                 $searchsort_session = $this->session->userdata('admin_sortsearchpage_data');
                 $pagingid           = $searchsort_session['uri_segment'];
                 redirect($this->user_type . '/' . $this->viewname . '/' . $pagingid);
@@ -430,7 +433,7 @@ class User_management_control extends CI_Controller
                 "status"  => $this->lang->line('message_type_failed'),
                 "message" => $this->lang->line('common_error_msg'),
             );
-            $this->session->set_flashdata('response', $response);
+            $this->session->set_flashdata('message_session', $response);
             redirect($this->user_type . '/' . $this->viewname);
         }
     }

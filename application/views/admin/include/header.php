@@ -55,6 +55,12 @@ if(!empty($user_image)){
         <link href="<?php echo $this->config->item('asset_path') ?>themes/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo $this->config->item('asset_path') ?>themes/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <script src="<?php echo $this->config->item('js_path') ?>jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            var loader = "<?= base_url('images/ajaxloader.gif') ?>";
+            var no_img = "<?= base_url('images/no_image.jpg') ?>";
+            var admin_img = "<?= $this->config->item('admin_pic_thumb_url') ?>";
+            var base_url = "<?php echo $this->config->item('admin_base_url') . $module ?>";
+        </script>
     </head>
   <body>
 

@@ -8,6 +8,7 @@
 <script src="<?php echo $this->config->item('asset_path') ?>themes/plugins/moment.min.js" type="text/javascript"></script>
 <script src="<?php echo $this->config->item('asset_path') ?>themes/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?= $this->config->item('js_path') ?>common.js"></script>
+<script type="text/javascript" src="<?= $this->config->item('js_path') ?>custom_function.js"></script>
 <script type="text/javascript">
             
     var Logout_url = '<?= $this->config->item('admin_base_url').'logout'; ?>';
@@ -26,6 +27,10 @@
     });
 
 </script>
+<?php
+//Javascript file included page wise
+(isset($foot_part_js) && !empty($foot_part_js)) ? print '<script type="text/javascript" src="' . $this->config->item('js_path') . 'admin/' . $foot_part_js . '.js"></script>' : '';
+?>
 </body>
 
 </html>

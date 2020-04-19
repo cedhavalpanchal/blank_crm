@@ -427,3 +427,185 @@ function status_change(status,id,viewname,is_booking = '')
     }},'No'	: {'class'	: 'special'}}});
       }    
 
+
+
+function isNumberKey(evt)
+{
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+    return true;
+}
+
+function mobile_valid(evt,id){          
+    var charCode = (evt.which) ? evt.which : evt.keyCode 
+    var mobile_length = $('#'+id).val().length;
+
+    if (mobile_length == 0 && charCode == 48 )
+        return false;
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+    return true;
+}
+
+function validlatlong(evt)
+{
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode > 31 && ((charCode > 57 || charCode < 44 || charCode == 47)))
+    {
+        return false;  
+    }
+    else
+    {
+        /* if (contact_no.value.length <13)
+        {
+        return true;
+        }
+        else
+        {
+        return false;
+        }*/
+        return  true;
+    }
+}
+
+
+
+function create_slug(pagetitle,idName)
+{
+    var string=pagetitle.toLowerCase();
+    string=string.replace(/[^a-zA-Z 0-9_\s-]+/g,'');
+    string=string.replace(/[\s-]+/g,' ');
+    string=string.replace(/[\s_]+/g,'-');
+    $('#'+idName).val(string);
+
+    $('#'+idName).parsley().destroy();
+    $('#'+idName).parsley();
+}
+
+
+function CheckPassword(inputtxt)
+{
+    var decimal=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{7,15}$/;
+
+    if(String(inputtxt).match(decimal))
+    {
+        //alert('Correct, try another...')
+        //return true;
+    }
+    else
+    {
+        $.confirm({'title': 'Alert', 'message': "<strong>Password must be between 7 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character.</strong>", 'buttons': {'ok': {'class': 'btn_center'}}});
+        $('#password').val('');
+        return false;
+    }
+}
+
+
+var arraydatacount = 0;
+var popupcontactlist = Array();
+var path_comman = $("#path_comman").val();
+
+$('#searchtext').keyup(function(event) {
+    if (event.keyCode == 13) {
+        search_data('changesearch', path_comman, popupcontactlist);
+    }
+});
+$('body').on('click', '#common_tb a', function(e) {
+    $.ajax({
+        type: "POST",
+        url: $(this).attr('href'),
+        data: {
+            result_type: 'ajax',
+            searchreport: $("#searchreport").val(),
+            perpage: $("#perpage").val(),
+            searchtext: $("#searchtext").val(),
+            sortfield: $("#sortfield").val(),
+            sortby: $("#sortby").val()
+        },
+        beforeSend: function() {
+            $('#common_div').block({message: 'Loading...'});
+        },
+        success: function(html) {
+            $("#common_div").html(html);
+            try {
+                for (i = 0; i < popupcontactlist.length; i++) {
+                    $('.mycheckbox:checkbox[value=' + popupcontactlist[i] + ']').attr('checked', true)
+                }
+            } catch (e) {}
+            $.unblockUI();
+        }
+    });
+    return false;
+});
+$('body').on('click', '#selecctall', function(e) {
+    if (this.checked) { // check select status
+        $('.mycheckbox').each(function() { //loop through each checkbox
+            this.checked = true; //select all checkboxes with class "mycheckbox" 
+            var arrayindex = jQuery.inArray(parseInt(this.value), popupcontactlist);
+            if (arrayindex == -1) {
+                popupcontactlist[arraydatacount++] = parseInt(this.value);
+            }
+        });
+    } else {
+        $('.mycheckbox').each(function() { //loop through each checkbox
+            this.checked = false; //deselect all checkboxes with class "mycheckbox"
+            var arrayindex = jQuery.inArray(parseInt(this.value), popupcontactlist);
+            if (arrayindex >= 0) {
+                popupcontactlist.splice(arrayindex, 1);
+                arraydatacount--;
+            }
+        });
+    }
+    $("#cnt_selected").text(popupcontactlist.length + " Record(s) Selected");
+});
+$('#allcheck').click(function() {
+    var val = $('#delete_all').val();
+    if (val != '') {
+        delete_all_multipal(val, path_comman, popupcontactlist);
+        arraydatacount = 0;
+        popupcontactlist = Array();
+    } else {
+        $.confirm({
+            'title': 'Alert',
+            'message': "<strong>Please select action</strong>",
+            'buttons': {
+                'ok': {
+                    'class': 'btn_center'
+                }
+            }
+        });
+    }
+});
+$('body').on('click', '.mycheckbox', function(e) {
+    if ($('.mycheckbox:checkbox[value=' + parseInt(this.value) + ']:checked').length) {
+        var arrayindex = jQuery.inArray(parseInt(this.value), popupcontactlist);
+        if (arrayindex == -1) {
+            popupcontactlist[arraydatacount++] = parseInt(this.value);
+        }
+        if ($('.mycheckbox:checked').length == $('.mycheckbox').length) {
+            $('#selecctall').prop('checked', true); // Checks it   
+        }
+    } else {
+        var arrayindex = jQuery.inArray(parseInt(this.value), popupcontactlist);
+        if (arrayindex >= 0) {
+            popupcontactlist.splice(arrayindex, 1);
+            $('#selecctall').prop('checked', false); // Checks it
+            arraydatacount--;
+        }
+    }
+    $("#cnt_selected").text(popupcontactlist.length + " Record(s) Selected");
+});
+
+function remove_selection() {
+    var cnt = popupcontactlist.length;
+    for (i = 0; i < popupcontactlist.length; i++) {
+        $('.mycheckbox:checkbox[value=' + popupcontactlist[i] + ']').attr('checked', false);
+    }
+    $('#selecctall').attr('checked', false);
+    popupcontactlist = Array();
+    $("#cnt_selected").text("0 Record(s) Selected");
+    arraydatacount = 0;
+}

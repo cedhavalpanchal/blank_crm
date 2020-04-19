@@ -17,10 +17,10 @@ class Admin_settings_control extends CI_Controller
         check_admin_login();
         $this->admin_session   = $this->session->userdata('business_crm_admin_session');
         $this->message_session = $this->session->flashdata('message_session');
-        $this->viewName   = $this->router->uri->segments[2];
-        $this->user_type  = 'admin';
-        $this->table_name = 'settings_master';
-        $this->page_title = $this->lang->line('system_configuration');
+        $this->viewName        = $this->router->uri->segments[2];
+        $this->user_type       = 'admin';
+        $this->table_name      = 'settings_master';
+        $this->page_title      = $this->lang->line('system_configuration');
         $this->load->model('Common_function_model');
     }
 
@@ -42,6 +42,7 @@ class Admin_settings_control extends CI_Controller
         }
 
         $data['main_content'] = "admin/" . $this->viewName . "/add";
+        $data['foot_part_js'] = 'setting';
         $this->load->view('admin/include/template', $data);
     }
 

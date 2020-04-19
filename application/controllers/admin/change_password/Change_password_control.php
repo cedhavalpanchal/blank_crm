@@ -32,6 +32,7 @@ class Change_password_control extends CI_Controller
     public function index()
     {
         $data['main_content'] = "admin/" . $this->viewName . "/change_password";
+        $data['foot_part_js'] = 'change_password';
         $this->load->view('admin/include/template', $data);
     }
 
@@ -77,14 +78,14 @@ class Change_password_control extends CI_Controller
                         "status"  => $this->lang->line('message_type_success'),
                         "message" => $this->lang->line('password_change_succ'),
                     );
-                    $this->session->set_userdata('change_password_session', $response);
+                    $this->session->set_flashdata('message_session', $response);
                     redirect('admin/' . $this->viewName);
                 } else {
                     $response = array(
                         "status"  => $this->lang->line('message_type_failed'),
                         "message" => $this->lang->line('invalid_old_password'),
                     );
-                    $this->session->set_userdata('change_password_session', $response);
+                    $this->session->set_flashdata('message_session', $response);
                     redirect('admin/' . $this->viewName);
                 }
             }
