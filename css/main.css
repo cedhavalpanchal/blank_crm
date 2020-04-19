@@ -798,7 +798,8 @@ a.icn-btn.icn-text.active {
 .cus-navigation.navbar-default .navbar-nav>li>a{ color: #a8c1e3; padding-top: 29px;
     padding-bottom: 30px; font-weight: normal;}
 
-.cus-navigation .navbar-header{ width: 364px; text-align: center; border-right: solid 1px #3c4962; }
+/*.cus-navigation .navbar-header{ width: 364px; text-align: center; border-right: solid 1px #3c4962; }*/
+.cus-navigation .navbar-header{ width: 200px; text-align: center; border-right: solid 1px #3c4962; }
 .cus-navigation .navbar-brand>img { display: inline-block;}
 .cus-navigation .navbar-brand{ width: 100%; text-align: center; }
 .cus-navigation.navbar-default .navbar-nav>.active>a, .cus-navigation.navbar-default .navbar-nav>.active>a:focus, .cus-navigation.navbar-default .navbar-nav>.active>a:hover{ background-color: transparent; color: #fff; }

@@ -62,10 +62,10 @@ form .error {
                                 <button type="submit" class="btn btn-primary btn-blue text-white m-t-20">Login</button>
                             </div>
                         </form>
-                        <div class="text-center">
+                        <!-- <div class="text-center">
                             <a href="#" class="forget-psw">Forgot Password?</a>
                             <a href="#" class="reset-psw">Click to reset Password.</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-7 col-xs-12 col-md-pull-4 col-sm-pull-5">

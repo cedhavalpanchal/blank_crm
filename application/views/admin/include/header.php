@@ -81,7 +81,7 @@ if(!empty($user_image)){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=base_url('admin/dashboard');?>"><img src="<?php echo $this->config->item('image_path') ?>/brand-logo.png" alt=""></a>
+          <a class="navbar-brand" href="<?=base_url('admin/dashboard');?>"><img src="<?php echo $this->config->item('image_path') ?>/brand-logo.png" class="avtar-img" style="position: absolute;width: 100px;height: 90px;top: 0;"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
