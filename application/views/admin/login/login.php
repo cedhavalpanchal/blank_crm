@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>:: Business CRM admin panel ::</title>
+    <title>:: Blank CRM ::</title>
     <meta name="description" content="${2}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="icon.png">
@@ -26,27 +26,7 @@ form .error {
                 <div class="col-md-4 col-sm-5 col-xs-12 col-md-push-8 col-sm-push-7">
                     <div class="login-outer">
                         <div class="text-center"><img src="<?php echo $this->config->item('image_path') ?>/logo.png" alt=""></div>
-                        <div id="div_msg">
-                            <?php
-                            if (null !== ($this->session->flashdata('response')) && false !== $this->session->flashdata('response')) {
-                                $flash = $this->session->flashdata('response');
-                                if ($flash['status'] === 'failed') {
-                                    ?>
-                                    <div class="alert alert-danger">
-                                        <a href="javascript:void(0)" class="close close-message" aria-label="close" title="Close">&times;</a>
-                                        <?php echo $flash['message']; ?>
-                                    </div>
-                                <?php } else { ?>
-                                    <div class="alert alert-success">
-                                        <a href="javascript:void(0)" class="close close-message" aria-label="close" title="Close">&times;</a>
-                                        <?php echo $flash['message']; ?>
-                                    </div>
-                                    <?php
-                                }
-                                $this->session->unset_userdata('response');
-                            }
-                            ?>
-                        </div>
+                        <?= $this->load->view('admin/include/alert_message') ?>
                         <form action="" method="post" name="registration" class="login-form">
                             <div class="form-group">
                                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -82,11 +62,12 @@ form .error {
     <script src="<?php echo $this->config->item('js_path') ?>jquery-3.2.1.min.js"></script>
     <script src="<?php echo $this->config->item('js_path') ?>bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="<?= $this->config->item('js_path') ?>common.js"></script>
     <script type="text/javascript">
         // Wait for the DOM to be ready
         $(function() {
           
-            $("form[name='registration']").validate({
+            $("form").validate({
             
                 rules: {
                 

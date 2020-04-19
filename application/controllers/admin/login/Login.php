@@ -87,7 +87,7 @@ class Login extends CI_Controller
                             "status"  => $this->lang->line('message_type_failed'),
                             "message" => $this->lang->line('inactive_account'),
                         );
-                        $this->session->set_flashdata('response', $response);
+                        $this->session->set_flashdata('message_session', $response);
                         $this->load->view('admin/login/login');
                     }
                 } else {
@@ -95,7 +95,7 @@ class Login extends CI_Controller
                         "status"  => $this->lang->line('message_type_failed'),
                         "message" => $this->lang->line('invalid_us_pass'),
                     );
-                    $this->session->set_flashdata('response', $response);
+                    $this->session->set_flashdata('message_session', $response);
                     $this->load->view('admin/login/login');
                 }
             } else {
