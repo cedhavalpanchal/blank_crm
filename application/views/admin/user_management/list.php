@@ -8,12 +8,6 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 ?>
-<script language="javascript">
-    $.blockUI({message: '<?= '<img src="' . base_url('images') . '/ajaxloader.gif" border="0" align="absmiddle"/>' ?> Please Wait...'});
-    $(document).ready(function() {
-        $.unblockUI();
-    });
-</script>
 <?php
 $viewname = $this->router->uri->segments[2];
 $path_comman = $this->config->item('admin_base_url') . $viewname . '/';

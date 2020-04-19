@@ -53,22 +53,8 @@ if(!empty($user_image)){
         <link href="<?php echo $this->config->item('asset_path') ?>themes/css/plugins.min.css" rel="stylesheet" type="text/css" />
 
         <link href="<?php echo $this->config->item('asset_path') ?>themes/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
-
         <link href="<?php echo $this->config->item('asset_path') ?>themes/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript">
-            
-            var Logout_url = '<?= $this->config->item('admin_base_url').'logout'; ?>';
-            function logout(){
-
-                $.confirm({
-                    'title': 'ALERT','message': " <strong> <?= $this->lang->line('logout_confirm'); ?>",'buttons': {'Yes': {'class': '',
-                    'action': function(){
-                        location.href = Logout_url;
-                    }},'No' : {'class'  : 'special'}}}); 
-
-            }
-
-        </script>
+        <script src="<?php echo $this->config->item('js_path') ?>jquery-3.2.1.min.js"></script>
     </head>
   <body>
 
