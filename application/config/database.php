@@ -74,27 +74,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-if(($_SERVER['HTTP_HOST']==('topsdemo.co.in')) || $_SERVER['HTTP_HOST']==('www.topsdemo.co.in')){
-	error_reporting(0);
-	$db['default']['hostname'] = 'localhost';
-	$db['default']['username'] = 'topscoin_api';
-	$db['default']['password'] = 'api@123';
-	$db['default']['database'] = 'topscoin_business_crm';  
-}
-else
-{
-	/*ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);*/
-
 	error_reporting(1);
 
-	$db['default']['hostname'] = 'localhost';
-	$db['default']['username'] = 'tops';
-	$db['default']['password'] = '123123';
-	$db['default']['database'] = 'business_crm';
-
-}
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'business_crm';
 
 $db['default']['dsn'] =  '';
 $db['default']['dbdriver'] = 'mysqli';
